@@ -1,0 +1,210 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to custom color scheme: #202140, #d4af37, #3b4883 */
+  --background: #202140; /* Dark blue-gray background */
+  --foreground: #ffffff; /* White text for contrast */
+  --card: #3b4883; /* Blue-purple card background */
+  --card-foreground: #ffffff; /* White text on cards */
+  --popover: #3b4883; /* Blue-purple popover background */
+  --popover-foreground: #ffffff; /* White popover text */
+  --primary: #d4af37; /* Metallic gold primary color */
+  --primary-foreground: #000000; /* Black text on gold for better contrast */
+  --secondary: #3b4883; /* Blue-purple secondary */
+  --secondary-foreground: #ffffff; /* White text on secondary */
+  --muted: #2a2f5a; /* Muted blue-gray background */
+  --muted-foreground: #e0e0e0; /* Light gray muted text */
+  --accent: #d4af37; /* Metallic gold accent */
+  --accent-foreground: #000000; /* Black text on gold accent */
+  --destructive: #dc2626; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #3b4883; /* Blue-purple borders */
+  --input: #3b4883; /* Blue-purple input backgrounds */
+  --ring: rgba(212, 175, 55, 0.5); /* Gold focus ring */
+  --chart-1: #d4af37; /* Metallic gold chart color */
+  --chart-2: #3b4883; /* Blue-purple chart color */
+  --chart-3: #202140; /* Dark blue-gray chart color */
+  --chart-4: #dc2626; /* Red chart color */
+  --chart-5: #b8941f; /* Darker gold chart color */
+  --radius: 0.75rem; /* Border radius */
+  --sidebar: #202140; /* Dark blue-gray sidebar */
+  --sidebar-foreground: #ffffff; /* White sidebar text */
+  --sidebar-primary: #d4af37; /* Metallic gold sidebar primary */
+  --sidebar-primary-foreground: #000000; /* Black sidebar primary text */
+  --sidebar-accent: #3b4883; /* Blue-purple sidebar accent */
+  --sidebar-accent-foreground: #ffffff; /* White sidebar accent text */
+  --sidebar-border: #3b4883; /* Blue-purple sidebar border */
+  --sidebar-ring: rgba(212, 175, 55, 0.5); /* Gold sidebar ring */
+  /* Updated font variable from Lucidity Expand to Ethnocentric */
+  --font-ethnocentric: "Ethnocentric"; /* Ethnocentric font */
+}
+
+.dark {
+  /* Dark mode variations of custom colors */
+  --background: #1a1d35; /* Darker blue-gray background */
+  --foreground: #ffffff; /* Pure white text */
+  --card: #2d3a6b; /* Darker blue-purple card background */
+  --card-foreground: #ffffff; /* White card text */
+  --popover: #2d3a6b; /* Darker blue-purple popover */
+  --popover-foreground: #ffffff; /* White popover text */
+  --primary: #e6c547; /* Brighter metallic gold for dark mode */
+  --primary-foreground: #000000; /* Black text on gold */
+  --secondary: #2d3a6b; /* Darker blue-purple secondary */
+  --secondary-foreground: #ffffff; /* White secondary text */
+  --muted: #252952; /* Darker muted background */
+  --muted-foreground: #e0e0e0; /* Light gray muted text */
+  --accent: #e6c547; /* Brighter metallic gold accent */
+  --accent-foreground: #000000; /* Black text on gold accent */
+  --destructive: #ef4444; /* Bright red */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #3b4883; /* Blue-purple borders */
+  --input: #2d3a6b; /* Darker input backgrounds */
+  --ring: rgba(230, 197, 71, 0.5); /* Brighter gold focus ring */
+  --chart-1: #e6c547; /* Brighter metallic gold chart */
+  --chart-2: #3b4883; /* Blue-purple chart color */
+  --chart-3: #1a1d35; /* Dark blue-gray chart */
+  --chart-4: #ef4444; /* Red chart */
+  --chart-5: #b8941f; /* Darker gold chart */
+  --sidebar: #1a1d35; /* Darker sidebar */
+  --sidebar-foreground: #ffffff; /* White sidebar text */
+  --sidebar-primary: #e6c547; /* Brighter metallic gold sidebar primary */
+  --sidebar-primary-foreground: #000000; /* Black sidebar primary text */
+  --sidebar-accent: #3b4883; /* Blue-purple sidebar accent */
+  --sidebar-accent-foreground: #ffffff; /* White sidebar accent text */
+  --sidebar-border: #3b4883; /* Blue-purple sidebar border */
+  --sidebar-ring: rgba(230, 197, 71, 0.5); /* Gold sidebar ring */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* Fixed circular reference by properly defining font fallback chain */
+  --font-ethnocentric: "Orbitron", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Updated background pattern with metallic gold colors */
+    background-image: radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(59, 72, 131, 0.03) 0%, transparent 50%),
+      linear-gradient(45deg, transparent 49%, rgba(212, 175, 55, 0.02) 50%, transparent 51%),
+      linear-gradient(-45deg, transparent 49%, rgba(59, 72, 131, 0.02) 50%, transparent 51%);
+    background-size: 80px 80px, 120px 120px, 40px 40px, 40px 40px;
+    background-position: 0 0, 40px 40px, 0 0, 20px 20px;
+  }
+
+  .dark body {
+    /* Dark mode background pattern with brighter metallic gold */
+    background-image: radial-gradient(circle at 25% 25%, rgba(230, 197, 71, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(59, 72, 131, 0.02) 0%, transparent 50%),
+      linear-gradient(45deg, transparent 49%, rgba(230, 197, 71, 0.015) 50%, transparent 51%),
+      linear-gradient(-45deg, transparent 49%, rgba(59, 72, 131, 0.015) 50%, transparent 51%);
+  }
+
+  /* Updated effects for metallic gold theme */
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, #202140 0%, #3b4883 50%, #d4af37 100%);
+  }
+
+  .dark .gradient-bg {
+    background: linear-gradient(135deg, #1a1d35 0%, #2d3a6b 50%, #e6c547 100%);
+  }
+
+  /* Enhanced text visibility with high contrast for custom theme */
+  .hero-text {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .section-text {
+    color: #e0e0e0 !important;
+  }
+
+  .dark .hero-text {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .dark .section-text {
+    color: #f0f0f0 !important;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+  /* Updated accent classes for metallic gold colors */
+  .gold-accent {
+    color: #d4af37;
+  }
+
+  .blue-purple-text {
+    color: #3b4883;
+  }
+
+  .gold-border {
+    border-color: #d4af37;
+  }
+
+  .blue-purple-border {
+    border-color: #3b4883;
+  }
+
+  /* Updated font class name from lucidity to ethnocentric */
+  .font-ethnocentric {
+    font-family: var(--font-ethnocentric);
+  }
+}
