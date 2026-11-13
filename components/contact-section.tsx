@@ -18,7 +18,7 @@ const offices = [
   },
   {
     country: "Canada",
-    address: "6242 ROSEVILLE GARDEN DRIVE; WINDSOR; ONTARIO; N8T 3A4",
+    address: "224 Terra Lou Drive, Belle River, ONTARIO, N8L 0L8",
     phone: "Contact India Office",
     email: "info@reakar-electric.com",
   },
